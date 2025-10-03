@@ -18,8 +18,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(width,height) {
-  return width*height;
+function getRectangleArea(width, height) {
+  return width * height;
 }
 /**
  * Returns a circumference of circle given by radius.
@@ -33,7 +33,7 @@ function getRectangleArea(width,height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-  return 2*3.14*radius;
+  return 2 * Math.PI * radius;
 }
 /**
  * Returns an average of two given numbers.
@@ -47,8 +47,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(value1,value2) {
-  return (value1+value2)/2;
+function getAverage(value1, value2) {
+  return (value1 + value2) / 2;
 }
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -64,8 +64,8 @@ function getAverage(value1,value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(x1,y1,x2,y2) {
-  return Math.sqrt((x2-x1)**2+(y2-y1)**2);
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
@@ -79,8 +79,8 @@ function getDistanceBetweenPoints(x1,y1,x2,y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(a,b) {
-  return -b/a;
+function getLinearEquationRoot(a, b) {
+  return -b / a;
 }
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -99,8 +99,8 @@ function getLinearEquationRoot(a,b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(x1,y1,x2,y2) {
-  return Math.abs((x1*x2+y1*y2)/(Math.sqrt(x1**2+y1**2)*Math.sqrt(x2**2+y2**2)));
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  return Math.abs((x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2)));
 }
 /**
  * Returns a last digit of a integer number.
@@ -116,7 +116,7 @@ function getAngleBetweenVectors(x1,y1,x2,y2) {
  *     0     => 0
  */
 function getLastDigit(value = 100) {
-  return value[value.length-1];
+  return value[value.length - 1];
 }
 /**
  * Returns a number by given string representation.
@@ -145,8 +145,8 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(a,b,c) {
-  return Math.sqrt(a**2+b**2+c**2);
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 /**
  * Returns the number rounded to specified power of 10.
@@ -187,7 +187,7 @@ function roundToPowerOfTen(/* num, pow */) {
  *   17 => true
  */
 function isPrime(n) {
-    for (let j=2; j<n; j++) {
+    for (let j = 2; j < n; j++) {
       if (n % j == 0) {
         return false;
       }
@@ -211,7 +211,7 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(value,def) {
+function toNumber(value, def) {
   return +value && def;
 }
 /**
@@ -226,7 +226,7 @@ function toNumber(value,def) {
  *   0  => 0
  */
 function getCube(num) {
-  return num**3;
+  return num ** 3;
 }
 /**
  * Returns the Fibonacci number located at the index position.
@@ -459,7 +459,7 @@ function getIntegerOnString(str, base) {
  * 2 ** 53  => false
  */
 function isSafeInteger(number) {
-  if (numbern<2**53 && Number.isInteger(number)) {
+  if (number < 2 ** 53 && Number.isInteger(number)) {
     return true;
   }
   else return false;
@@ -533,8 +533,8 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(x1,x2,x3) {
-  return x1+x2+x3;
+function getSumOfNumbers(x1, x2, x3) {
+  return x1 + x2 + x3;
 }
 
 /**
@@ -549,8 +549,8 @@ function getSumOfNumbers(x1,x2,x3) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(firstNumber,secondNumber) {
-  throw Math.max(firstNumber,secondNumber);
+function getMaxNumber(firstNumber, secondNumber) {
+  throw Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -565,8 +565,8 @@ function getMaxNumber(firstNumber,secondNumber) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(min,max) {
-  return Math.random(min,max);
+function getRandomInteger(min, max) {
+  return Math.random(min, max);
 }
 
 /**
@@ -580,7 +580,7 @@ function getRandomInteger(min,max) {
  * 3, 4 => 5
  */
 function getHypotenuse(a,b) {
-  return Math.sqrt(a**2+b**2);
+  return Math.sqrt(a ** 2 + b ** 2);
 }
 
 /**
