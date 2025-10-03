@@ -21,7 +21,6 @@
 function getRectangleArea(w,h) {
   return w*h;
 }
-console.log(getRectangleArea(10,5));
 /**
  * Returns a circumference of circle given by radius.
  *
@@ -36,7 +35,6 @@ console.log(getRectangleArea(10,5));
 function getCircleCircumference(r) {
   return 2*3.14*r;
 }
-console.log(getCircleCircumference(5));
 /**
  * Returns an average of two given numbers.
  *
@@ -52,7 +50,6 @@ console.log(getCircleCircumference(5));
 function getAverage(a,b) {
   return (a+b)/2;
 }
-console.log(getAverage(2,3));
 /**
  * Returns a distance between two points by cartesian coordinates.
  *
@@ -70,7 +67,6 @@ console.log(getAverage(2,3));
 function getDistanceBetweenPoints(x1,y1,x2,y2) {
   return Math.sqrt((x2-x1)**2+(y2-y1)**2);
 }
-console.log(getDistanceBetweenPoints(-5,0,10,-10));
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
  *
@@ -86,7 +82,6 @@ console.log(getDistanceBetweenPoints(-5,0,10,-10));
 function getLinearEquationRoot(a,b) {
   return -b/a;
 }
-console.log(getLinearEquationRoot(5,0));
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
@@ -107,7 +102,6 @@ console.log(getLinearEquationRoot(5,0));
 function getAngleBetweenVectors(x1,y1,x2,y2) {
   return Math.abs((x1*x2+y1*y2)/(Math.sqrt(x1**2+y1**2)*Math.sqrt(x2**2+y2**2)));
 }
-console.log(getAngleBetweenVectors(1,0,0,1))
 /**
  * Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
@@ -124,7 +118,6 @@ console.log(getAngleBetweenVectors(1,0,0,1))
 function getLastDigit(value = 100) {
   return value[value.length-1];
 }
-console.log(getLastDigit());
 /**
  * Returns a number by given string representation.
  *
@@ -139,7 +132,6 @@ console.log(getLastDigit());
 function parseNumberFromString(value) {
   return +value;
 }
-console.log(parseNumberFromString('200'));
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
@@ -156,7 +148,6 @@ console.log(parseNumberFromString('200'));
 function getParallelepipedDiagonal(a,b,c) {
   return Math.sqrt(a**2+b**2+c**2);
 }
-console.log(getParallelepipedDiagonal(1,1,1));
 /**
  * Returns the number rounded to specified power of 10.
  *
@@ -205,7 +196,6 @@ function isPrime(n) {
       }
     };
 }
-console.log(isPrime(5));
 /**
  * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
@@ -224,7 +214,6 @@ console.log(isPrime(5));
 function toNumber(v,d) {
   return +v && d;
 }
-console.log(null);
 /**
  * Returns the cube of the given number.
  *
@@ -239,7 +228,6 @@ console.log(null);
 function getCube(n) {
   return n**3;
 }
-console.log(getCube(3));
 /**
  * Returns the Fibonacci number located at the index position.
  *
@@ -302,10 +290,8 @@ function isPowerOfTwo(n) {
   if (Number.isInteger(Math.sqrt(n))) {
     return true;
   }
-  else return false
+  else return false;
 }
-console.log(isPowerOfTwo(14));
-console.log(isPowerOfTwo(16));
 /**
  * Returns the sine of a number.
  *
@@ -319,7 +305,6 @@ console.log(isPowerOfTwo(16));
 function getSine(n) {
  return Math.sin(n);
 }
-console.log(getSine(1));
 /**
  * Returns a string representation of a number in a specified base (radix).
  *
@@ -414,9 +399,6 @@ function isNumber(n) {
     return true;
   } else return false;
 }
-console.log(isNumber(1));
-console.log(isNumber('1'));
-console.log(isNumber(null));
 /**
  * Returns a boolean value indicating whether a number is an integer or not.
  *
@@ -435,9 +417,6 @@ function isInteger(n) {
     } else return false;
   } else return false;
 }
-console.log('5');
-console.log(5);
-console.log(5.1);
 /**
  * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
  *
@@ -451,8 +430,6 @@ console.log(5.1);
 function getFloatOnString(str) {
   return Number(str);
 }
-console.log('2323ffdg');
-consolelog('dfgdfgdfg');
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
  * from the argument, returns NaN.
@@ -470,9 +447,6 @@ consolelog('dfgdfgdfg');
 function getIntegerOnString(str, base) {
   return parseInt(str, base);
 }
-console.log(getIntegerOnString('4.567abcdefgh', 10));
-console.log(getIntegerOnString('1.234', 2));
-console.log(getIntegerOnString('10', 8));
 /**
  * Returns whether a number is a safe integer.
  *
@@ -488,7 +462,7 @@ function isSafeInteger(n) {
   if (n<2**53 && Number.isInteger(n)) {
     return true;
   }
-  else { return false };
+  else return false;
 }
 
 /**
@@ -504,7 +478,6 @@ function isSafeInteger(n) {
 function roundToSmallestInteger(n) {
   return Math.floor(n);
 }
-
 /**
  * Returns the largest integer greater than or equal to a given number.
  *
@@ -518,7 +491,6 @@ function roundToSmallestInteger(n) {
 function roundToLargestInteger(n) {
   return Math.ceil(n);
 }
-
 /**
  * Returns the value of a number rounded to the nearest integer.
  *
