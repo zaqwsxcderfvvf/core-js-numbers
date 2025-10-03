@@ -18,8 +18,8 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(w,h) {
-  return w*h;
+function getRectangleArea(width,height) {
+  return width*height;
 }
 /**
  * Returns a circumference of circle given by radius.
@@ -32,8 +32,8 @@ function getRectangleArea(w,h) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(r) {
-  return 2*3.14*r;
+function getCircleCircumference(radius) {
+  return 2*3.14*radius;
 }
 /**
  * Returns an average of two given numbers.
@@ -47,8 +47,8 @@ function getCircleCircumference(r) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(a,b) {
-  return (a+b)/2;
+function getAverage(value1,value2) {
+  return (value1+value2)/2;
 }
 /**
  * Returns a distance between two points by cartesian coordinates.
@@ -211,8 +211,8 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(v,d) {
-  return +v && d;
+function toNumber(value,def) {
+  return +value && def;
 }
 /**
  * Returns the cube of the given number.
@@ -225,8 +225,8 @@ function toNumber(v,d) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(n) {
-  return n**3;
+function getCube(num) {
+  return num**3;
 }
 /**
  * Returns the Fibonacci number located at the index position.
@@ -286,8 +286,8 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(n) {
-  if (Number.isInteger(Math.sqrt(n))) {
+function isPowerOfTwo(num) {
+  if (Number.isInteger(Math.sqrt(num))) {
     return true;
   }
   else return false;
@@ -302,8 +302,8 @@ function isPowerOfTwo(n) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(n) {
- return Math.sin(n);
+function getSine(num) {
+ return Math.sin(num);
 }
 /**
  * Returns a string representation of a number in a specified base (radix).
@@ -394,8 +394,8 @@ function getNumberValue(/* number */) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(n) {
-  if (typeof n === 'number' || n === null) {
+function isNumber(number) {
+  if (typeof number === 'number' || number === null) {
     return true;
   } else return false;
 }
@@ -410,9 +410,9 @@ function isNumber(n) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(n) {
-  if (typeof n === 'number'){ 
-    if (Number.isInteger(n)) {
+function isInteger(number) {
+  if (typeof number === 'number'){ 
+    if (Number.isInteger(number)) {
       return true;
     } else return false;
   } else return false;
@@ -458,8 +458,8 @@ function getIntegerOnString(str, base) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(n) {
-  if (n<2**53 && Number.isInteger(n)) {
+function isSafeInteger(number) {
+  if (numbern<2**53 && Number.isInteger(number)) {
     return true;
   }
   else return false;
@@ -475,8 +475,8 @@ function isSafeInteger(n) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(n) {
-  return Math.floor(n);
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
 }
 /**
  * Returns the largest integer greater than or equal to a given number.
@@ -488,8 +488,8 @@ function roundToSmallestInteger(n) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(n) {
-  return Math.ceil(n);
+function roundToLargestInteger(number) {
+  return Math.ceil(number);
 }
 /**
  * Returns the value of a number rounded to the nearest integer.
@@ -502,8 +502,8 @@ function roundToLargestInteger(n) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(n) {
-  return Math.round(n);
+function roundToNearestInteger(number) {
+  return Math.round(number);
 }
 
 /**
@@ -517,8 +517,8 @@ function roundToNearestInteger(n) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(n) {
-  Math.trunc(n);
+function getIntegerPartNumber(number) {
+  Math.trunc(number);
 }
 
 /**
@@ -549,8 +549,8 @@ function getSumOfNumbers(x1,x2,x3) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(a,b) {
-  throw Math.max(a,b);
+function getMaxNumber(firstNumber,secondNumber) {
+  throw Math.max(firstNumber,secondNumber);
 }
 
 /**
