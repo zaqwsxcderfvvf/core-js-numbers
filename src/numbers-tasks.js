@@ -18,10 +18,10 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleArea(w,h) {
+  return w*h;
 }
-
+console.log(getRectangleArea(10,5));
 /**
  * Returns a circumference of circle given by radius.
  *
@@ -33,10 +33,10 @@ function getRectangleArea(/* width, height */) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(/* radius */) {
-  throw new Error('Not implemented');
+function getCircleCircumference(r) {
+  return 2*3.14*r;
 }
-
+console.log(getCircleCircumference(5));
 /**
  * Returns an average of two given numbers.
  *
@@ -49,10 +49,10 @@ function getCircleCircumference(/* radius */) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(a,b) {
+  return (a+b)/2;
 }
-
+console.log(getAverage(2,3));
 /**
  * Returns a distance between two points by cartesian coordinates.
  *
@@ -67,10 +67,10 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1,y1,x2,y2) {
+  return Math.sqrt((x2-x1)**2+(y2-y1)**2);
 }
-
+console.log(getDistanceBetweenPoints(-5,0,10,-10));
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
  *
@@ -83,10 +83,10 @@ function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a,b) {
+  return -b/a;
 }
-
+console.log(getLinearEquationRoot(5,0));
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
  * coordinates in Cartesian plane.
@@ -104,10 +104,10 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1,y1,x2,y2) {
+  return Math.abs((x1*x2+y1*y2)/(Math.sqrt(x1**2+y1**2)*Math.sqrt(x2**2+y2**2)));
 }
-
+console.log(getAngleBetweenVectors(1,0,0,1))
 /**
  * Returns a last digit of a integer number.
  * The input parameter will always be greater than or equal to zero and will be in decimal notation.
@@ -121,10 +121,10 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value = 100) {
+  return value[value.length-1];
 }
-
+console.log(getLastDigit());
 /**
  * Returns a number by given string representation.
  *
@@ -136,10 +136,10 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
-
+console.log(parseNumberFromString('200'));
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
  *
@@ -153,10 +153,10 @@ function parseNumberFromString(/* value */) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getParallelepipedDiagonal(a,b,c) {
+  return Math.sqrt(a**2+b**2+c**2);
 }
-
+console.log(getParallelepipedDiagonal(1,1,1));
 /**
  * Returns the number rounded to specified power of 10.
  *
@@ -195,10 +195,17 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+    for (let j=2; j<n; j++) {
+      if (n % j == 0) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    };
 }
-
+console.log(isPrime(5));
 /**
  * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
@@ -214,10 +221,10 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(v,d) {
+  return +v && d;
 }
-
+console.log(null);
 /**
  * Returns the cube of the given number.
  *
@@ -229,10 +236,10 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(n) {
+  return n**3;
 }
-
+console.log(getCube(3));
 /**
  * Returns the Fibonacci number located at the index position.
  *
@@ -291,10 +298,14 @@ function getSumOfDigits(/* num */) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(n) {
+  if (Number.isInteger(Math.sqrt(n))) {
+    return true;
+  }
+  else return false
 }
-
+console.log(isPowerOfTwo(14));
+console.log(isPowerOfTwo(16));
 /**
  * Returns the sine of a number.
  *
@@ -305,10 +316,10 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(n) {
+ return Math.sin(n);
 }
-
+console.log(getSine(1));
 /**
  * Returns a string representation of a number in a specified base (radix).
  *
@@ -398,10 +409,14 @@ function getNumberValue(/* number */) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(n) {
+  if (typeof n === 'number' || n === null) {
+    return true;
+  } else return false;
 }
-
+console.log(isNumber(1));
+console.log(isNumber('1'));
+console.log(isNumber(null));
 /**
  * Returns a boolean value indicating whether a number is an integer or not.
  *
@@ -413,10 +428,16 @@ function isNumber(/* number */) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(/* number */) {
-  throw new Error('Not implemented');
+function isInteger(n) {
+  if (typeof n === 'number'){ 
+    if (Number.isInteger(n)) {
+      return true;
+    } else return false;
+  } else return false;
 }
-
+console.log('5');
+console.log(5);
+console.log(5.1);
 /**
  * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
  *
@@ -427,10 +448,11 @@ function isInteger(/* number */) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+  return Number(str);
 }
-
+console.log('2323ffdg');
+consolelog('dfgdfgdfg');
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
  * from the argument, returns NaN.
@@ -445,10 +467,12 @@ function getFloatOnString(/* str */) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
+function getIntegerOnString(str, base) {
+  return parseInt(str, base);
 }
-
+console.log(getIntegerOnString('4.567abcdefgh', 10));
+console.log(getIntegerOnString('1.234', 2));
+console.log(getIntegerOnString('10', 8));
 /**
  * Returns whether a number is a safe integer.
  *
@@ -460,8 +484,11 @@ function getIntegerOnString(/* str, base */) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(/* number */) {
-  throw new Error('Not implemented');
+function isSafeInteger(n) {
+  if (n<2**53 && Number.isInteger(n)) {
+    return true;
+  }
+  else { return false };
 }
 
 /**
@@ -474,8 +501,8 @@ function isSafeInteger(/* number */) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToSmallestInteger(n) {
+  return Math.floor(n);
 }
 
 /**
@@ -488,8 +515,8 @@ function roundToSmallestInteger(/* number */) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToLargestInteger(n) {
+  return Math.ceil(n);
 }
 
 /**
@@ -503,8 +530,8 @@ function roundToLargestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(/* number */) {
-  throw new Error('Not implemented');
+function roundToNearestInteger(n) {
+  return Math.round(n);
 }
 
 /**
@@ -518,8 +545,8 @@ function roundToNearestInteger(/* number */) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
+function getIntegerPartNumber(n) {
+  Math.trunc(n);
 }
 
 /**
@@ -534,8 +561,8 @@ function getIntegerPartNumber(/* number */) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1,x2,x3) {
+  return x1+x2+x3;
 }
 
 /**
@@ -550,8 +577,8 @@ function getSumOfNumbers(/* x1, x2, x3 */) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a,b) {
+  throw Math.max(a,b);
 }
 
 /**
@@ -566,8 +593,8 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min,max) {
+  return Math.random(min,max);
 }
 
 /**
@@ -580,8 +607,8 @@ function getRandomInteger(/* min, max */) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a,b) {
+  return Math.sqrt(a**2+b**2);
 }
 
 /**
