@@ -100,7 +100,7 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  return Math.abs((x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2)));
+  return Math.acos((x1 * x2 + y1 * y2) / (Math.sqrt(x1 ** 2 + y1 ** 2) * Math.sqrt(x2 ** 2 + y2 ** 2)));
 }
 /**
  * Returns a last digit of a integer number.
@@ -115,8 +115,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(value = 100) {
-  return value[value.length - 1];
+function getLastDigit(value) {
+  return value % 10;
 }
 /**
  * Returns a number by given string representation.
@@ -187,14 +187,13 @@ function roundToPowerOfTen(/* num, pow */) {
  *   17 => true
  */
 function isPrime(n) {
+  if (n < 2) return false;
     for (let j = 2; j < n; j++) {
-      if (n % j == 0) {
+      if (n % j === 0) {
         return false;
       }
-      else {
-        return true;
-      }
     };
+  return true;
 }
 /**
  * Tries to convert value to number and returns it if conversion was successful;
@@ -212,7 +211,8 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  return +value && def;
+  const converted = Number(value);
+  return isNaN(converted) ? def : converted;
 }
 /**
  * Returns the cube of the given number.
@@ -428,7 +428,7 @@ function isInteger(number) {
  * 'abcdefgh'      => NaN
  */
 function getFloatOnString(str) {
-  return Number(str);
+  return parseFloat(str);
 }
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
@@ -518,7 +518,7 @@ function roundToNearestInteger(number) {
  * -5.5 => -5
  */
 function getIntegerPartNumber(number) {
-  Math.trunc(number);
+  return Math.trunc(number);
 }
 
 /**
@@ -550,7 +550,7 @@ function getSumOfNumbers(x1, x2, x3) {
  * 0, 5   => 5
  */
 function getMaxNumber(firstNumber, secondNumber) {
-  throw Math.max(firstNumber, secondNumber);
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -579,7 +579,7 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(a,b) {
+function getHypotenuse(a, b) {
   return Math.sqrt(a ** 2 + b ** 2);
 }
 
